@@ -10,6 +10,7 @@ socket.on("leave" , function(dataObj){
     leaveDiv.textContent = `${dataObj.username} left chat`;
     chatWindow.append(leaveDiv);
     deleteFromOnlineList(dataObj.id);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
 })
 
 socket.on("join" , function(dataObj){
@@ -19,6 +20,7 @@ socket.on("join" , function(dataObj){
     joinDiv.textContent = `${dataObj.username} joined chat`;
     chatWindow.append(joinDiv);
     addInOnlineList(dataObj);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
 })
 
 socket.on("chatLeft" , function(chatObj){
