@@ -50,8 +50,10 @@ io.on("connection" , function(socket){
     })
 })
 
+//for deployement
+let port = process.env.PORT || 5500;
 
 // tcp port 5500
-server.listen(5500 , function(){
+server.listen(port , function(){
     console.log("Server started at port 5500 !!!");
 })
